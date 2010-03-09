@@ -1,6 +1,6 @@
 %define	name	pixelize
 %define	version	1.0.0
-%define release	%mkrel 5
+%define release	%mkrel 6
 
 Name:		%{name}
 Summary:	A program to build larger pictures from hundreds of smaller images 
