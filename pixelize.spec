@@ -1,6 +1,6 @@
 %define	name	pixelize
 %define	version	1.0.0
-%define release	%mkrel 6
+%define release	%mkrel 7
 
 Name:		%{name}
 Summary:	A program to build larger pictures from hundreds of smaller images 
@@ -37,6 +37,21 @@ mkdir -p %{buildroot}%{_bindir}
 install -m 755 pixelize %{buildroot}%{_bindir}
 install -m 755 make_db	%{buildroot}%{_bindir}
 
+#mdk menu entry
+mkdir -p %{buildroot}%{_datadir}/applications
+cat > %{buildroot}%{_datadir}/applications/%{name}.desktop << EOF
+[Desktop Entry]
+Encoding=UTF-8
+Name=Pixelize
+Exec=%{_bindir}/%{name}
+Icon=graphics_section
+Terminal=false
+Type=Application
+Categories=Graphics;
+MimeType=image/gif;image/jpeg;image/png;image/bmp;image/x-eps;image/x-ico;image/x-portable-bitmap;image/x-portable-pixmap;image/x-xbitmap;image/x-xpixmap;
+EOF
+
+
 %clean
 rm -rf %{buildroot}
 
@@ -45,3 +60,4 @@ rm -rf %{buildroot}
 %doc README LICENSE  
 %{_bindir}/make_db
 %{_bindir}/pixelize
+%{_datadir}/applications/pixelize.desktop
