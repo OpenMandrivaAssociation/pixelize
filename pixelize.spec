@@ -1,6 +1,6 @@
 %define	name	pixelize
 %define	version	1.0.0
-%define release	%mkrel 7
+%define release	%mkrel 8
 
 Name:		%{name}
 Summary:	A program to build larger pictures from hundreds of smaller images 
@@ -27,6 +27,10 @@ With about 1000 images, Pixelize can do a reasonable job.
 %prep
 %setup -q
 %patch0 -p0
+
+# fix compiler flags
+sed -i -e 's|CFLAGS = -g|CFLAGS = %{optflags}|' Makefile
+sed -i -e 's|DFLAGS =|DFLAGS = %{ldflags}|' Makefile
 
 %build
 %make
