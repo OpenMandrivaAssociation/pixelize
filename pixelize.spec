@@ -28,12 +28,8 @@ With about 1000 images, Pixelize can do a reasonable job.
 %setup -q
 %patch0 -p0
 
-# fix compiler flags
-sed -i -e 's|CFLAGS = -g|CFLAGS = %{optflags}|' Makefile
-sed -i -e 's|DFLAGS =|DFLAGS = %{ldflags}|' Makefile
-
 %build
-%make
+CFLAGS="%{optflags}" DFLAGS="%{ldflags}" %make
 
 %install
 rm -rf %{buildroot}
