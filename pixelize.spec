@@ -1,7 +1,7 @@
 Name:		pixelize
 Summary:	A program to build larger pictures from hundreds of smaller images 
 Version:	1.0.0
-Release:	10
+Release:	11
 Source0:	ftp://lashwhip.com/pub/%{name}-%{version}.tar.gz
 Patch0:		pixelize-1.0.0-fix_overlinking.patch
 URL:		http://lashwhip.com/pixelize.html
