@@ -8,7 +8,7 @@ URL:		http://lashwhip.com/pixelize.html
 Group:		Graphics
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 License:	GPLv2+
-BuildRequires:	gtk2-devel
+BuildRequires:	gtk+2.0-devel
 
 %description
 Pixelize is a program that will use many scaled down images to
