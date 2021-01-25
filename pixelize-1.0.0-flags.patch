@@ -1,0 +1,16 @@
+diff -up pixelize-1.0.0/Makefile.omv~ pixelize-1.0.0/Makefile
+--- pixelize-1.0.0/Makefile.omv~	2021-01-25 04:50:52.948482403 +0100
++++ pixelize-1.0.0/Makefile	2021-01-25 04:51:14.115361487 +0100
+@@ -1,9 +1,9 @@
+ # compile stuff in this dir
+ 
+-CC = gcc
++CC ?= gcc
+ 
+-CFLAGS = -g -I/usr/X11R6/include `pkg-config --cflags gtk+-2.0` -Wall
+-DFLAGS = -L/usr/X11R6/lib `pkg-config --libs gtk+-2.0`  -Wall
++CFLAGS += -g -I/usr/X11R6/include `pkg-config --cflags gtk+-2.0` -Wall
++DFLAGS += -L/usr/X11R6/lib `pkg-config --libs gtk+-2.0`  -Wall
+ LIBS = -lm
+ 
+ OBJS = main.o setup_menu.o callback_menu.o help.o options.o \
