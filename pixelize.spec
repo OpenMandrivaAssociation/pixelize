@@ -4,7 +4,7 @@ Version:	1.0.0
 Release:	12
 Source0:	ftp://lashwhip.com/pub/%{name}-%{version}.tar.gz
 Patch0:		pixelize-1.0.0-flags.patch
-URL:		http://lashwhip.com/pixelize.html
+URL:		https://lashwhip.com/pixelize.html
 Group:		Graphics
 License:	GPLv2+
 BuildRequires:	gtk+2.0-devel
